@@ -1,4 +1,3 @@
-
 # ZShell configs -- Ronaldd Pinho
 
 # Lines configured by zsh-newuser-install
@@ -11,18 +10,18 @@ bindkey -e
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/ronaldd/.zshrc'
-
 autoload -Uz compinit
-#autoload zkbd
 compinit
+# autoload zkbd
 # End of lines added by compinstall
 
-# Keys
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
+# Meus bindkeys
+bindkey  "^[[H"  beginning-of-line
+bindkey  "^[[F"  end-of-line
+bindkey  ";5D"   backward-word
+bindkey  ";5C"   forward-word
 
-#
-# Function for show escape colors in terminal with its codes
+# função para mostra a lista de códigos de cores unix
 function showunixcolors() {
 	for COLOR in {1..255}; do
 		echo -en "\e[38;5;${COLOR}m${COLOR} ";
@@ -30,12 +29,15 @@ function showunixcolors() {
 	echo;
 }
 
-# Zsh prompt settings
+# Prompt settings
 if [[ $EUID != 0 ]]; then
-	PROMPT="%(?..%F{197}[%?])%f%B%F{202}%n@%m%f %F{245}%1~%f%b %F{202}%#%f "
+	PROMPT="%(?..%F{197}[%?])%f%B%F{202}%n@%m%f%b %F{215}%1~%f %F{202}%#%f "
 else
-	PROMPT="%(?..%F{88}[%?])%f%B%F{9}%n%f%b%B%F{231}@%m%b %1~ %#%f"
+	PROMPT="%(?..%F{88}[%?])%f%B%F{9}%n%f%b%F{231}@%m %1~ %#%f "
 fi
+
+export EDITOR=micro
+export VISUAL=micro
 
 export PATH=$PATH:$HOME/.local/bin
 export LD_LIBRARY_PATH=/usr/lib:/lib:/usr/lib64:/usr/lib32:/usr/local/lib:/usr/local/lib64:$HOME/.local/lib
