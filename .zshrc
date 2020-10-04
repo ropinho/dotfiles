@@ -10,9 +10,10 @@ bindkey -e
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/ronaldd/.zshrc'
+
 autoload -Uz compinit
+#autoload zkbd
 compinit
-# autoload zkbd
 # End of lines added by compinstall
 
 # Meus bindkeys
@@ -31,12 +32,12 @@ function showunixcolors() {
 
 # Prompt settings
 if [[ $EUID != 0 ]]; then
-	PROMPT="%(?..%F{197}[%?])%f%B%F{202}%n@%m%f%b %F{215}%1~%f %F{202}%#%f "
+	PROMPT="%(?..%F{88}[%?])%f%B%F{220}%n@%m%f%b %F{215}%1~%f %F{220}%#%f "
 else
 	PROMPT="%(?..%F{88}[%?])%f%B%F{9}%n%f%b%F{231}@%m %1~ %#%f "
 fi
 
-export EDITOR=micro
+export EDITOR=vim
 export VISUAL=micro
 
 export PATH=$PATH:$HOME/.local/bin
@@ -49,6 +50,7 @@ alias ls='ls --color=auto'
 alias l='ls -lhF'
 alias ll='l -a'
 alias la='ls -aF'
+alias lss='ls -Fsh1'
 
 alias pacman='pacman --color auto'
 
