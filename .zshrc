@@ -9,7 +9,7 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/ronaldd/.zshrc'
+zstyle :compinstall filename "/home/$USER/.zshrc"
 
 autoload -Uz compinit
 #autoload zkbd
@@ -37,6 +37,10 @@ else
 	PROMPT="%(?..%F{88}[%?])%f%B%F{9}%n%f%b%F{231}@%m %1~ %#%f "
 fi
 
+# Maia prompt
+# Print some system information when the shell is first started
+#PROMPT="%B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b >%{$fg[cyan]%}>%B%(?.%{$fg[cyan]%}.%{$fg[red]%})>%{$reset_color%}%b "
+
 export EDITOR=vim
 export VISUAL=micro
 
@@ -51,17 +55,9 @@ alias l='ls -lhF'
 alias ll='l -a'
 alias la='ls -aF'
 alias lss='ls -Fsh1'
-
 alias pacman='pacman --color auto'
-
 alias grep='grep --color=auto'
 alias egrep='grep -e'
 #------------------------------------------------------------------------------
-
 # make flag
 export MAKEFLAGS='--no-print-directory'
-
-export LLVM_ROOT=/usr/bin
-export NODE_JS=/usr/bin/node
-export EMSCRIPTEN_ROOT=/usr/lib/emscripten
-
