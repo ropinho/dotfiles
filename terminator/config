@@ -1,23 +1,24 @@
 [global_config]
   title_hide_sizetext = True
   title_transmit_fg_color = "#241f31"
-  title_transmit_bg_color = "#0076c9"
+  title_transmit_bg_color = "#7076c9"
   title_receive_fg_color = "#f6f5f4"
   title_receive_bg_color = "#24e97f"
   title_inactive_fg_color = "#f6f5f4"
   title_inactive_bg_color = "#1b2224"
   suppress_multiple_term_dialog = True
   title_use_system_font = False
-  title_font = Inconsolata Medium Semi-Expanded 10
+  title_font = Inconsolata Medium Semi-Condensed 10
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.9
+    background_darkness = 0.94
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Fira Mono Medium 10
+    font = Fira Mono 9.5
     foreground_color = "#ffffff"
     scrollbar_position = hidden
+    palette = "#000000:#e01b24:#26a259:#f5c211:#3584e4:#9141ac:#00aaaa:#aaaaaa:#555555:#fa5144:#57e389:#f9f06b:#99c1f1:#dc8add:#55ffff:#ffffff"
     use_system_font = False
   [[hacker]]
     cursor_color = "#aaaaaa"
@@ -29,6 +30,16 @@
     cursor_color = "#aaaaaa"
     font = TerminessTTF Nerd Font Mono Bold 12
     foreground_color = "#c0bfbc"
+    use_system_font = False
+  [[bigterm]]
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Hack 13
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scroll_on_output = True
+    scrollback_lines = 1000
     use_system_font = False
 [layouts]
   [[default]]
