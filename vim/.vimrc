@@ -2,15 +2,24 @@
 
 call plug#begin('~/.vim/plugged')
 
+" Verificar sintaxe
+Plug 'scrooloose/syntastic'
+
 " Plugin do Git
 Plug 'tpope/vim-fugitive'
 
+" Para parentesis, aspas, tags XML, e mais...
+Plug 'tpope/vim-surround'
+
 " Temas de cores
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-Plug 'embark-theme/vim', { 'as': 'embark' }
 
 " Árvore de diretórios e arquivos
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'majutsushi/tagbar'
 
 " Faça do vim sua IDE C++ 
 Plug 'chxuan/cpp-mode'
@@ -18,50 +27,51 @@ Plug 'vim-jp/vim-cpp'
 
 call plug#end()
 
-" Configurações do Java Autocomplete
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-
-set termguicolors
 colorscheme spaceduck
 
-set mouse=a                     " enable using mouse if terminal emulator supports it "
-set colorcolumn=81              " color the 81th column for reference "
-set showmode                    " allow show what mode we're currently editing in "
-set number                      " enable and display line numbers "
-
-"?"
-set tabstop=4                   " length of tabulation "
-set softtabstop=4               " pretend like a tab is removed, even if spaces "
-set smarttab                    " insert tab on the start of a line according shiftwidth "
-set autoindent                  " atomatic indentation when break row "
-set shiftwidth=4                " number of spaces to use for autoindent "
-set backspace=indent,eol,start  " allow backspacing over everything in insert mode "
-set ignorecase                  " match searches with NO case-sensitive "
-set smartcase                   ""
-set smarttab                    ""
-set scrolloff=4                 ""
-set nocompatible                " Use vim defaults (drop compatibility with vi) "
-set history=50                  " keep 50 command lines in history "
-set hlsearch                    " Switch on highlighting the last used search pattern. "
-
+set termguicolors
 syntax enable
+filetype off
 
-" Highlighting "
+" Inicia o NERDTree e coloca o cursor na outra janela
+autocmd VimEnter * NERDTree | wincmd p
+
+" Iniciar o NERDTree quando o vim for aberto sem arquivos como argumentos
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Fechar o Vim se o NERDTree for a unica janela aberta
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 
+    \ && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
+" Habilita o F8 para abrir a TagBar
+nmap <F8> :TagbarToggle<CR>
+
+set mouse=a     " ativa o uso do mouse no terminal se o emulador dele suportar
+set colorcolumn=81             " destaca a 81a coluna do editor
+set showmode                   " mostra em que modo o editor esta' atualmente
+set number                     " mostra os numeros das linhas
+
+set autoindent                 " indenta automaticamente quando quebra a linha
+set shiftwidth=2               " numero de espacos para usar no autoindent
+set backspace=indent,eol,start " permite deletar qualquer coisa no modo insert
+
+set nocompatible
+set history=50
+set hlsearch
+
+" Highlighting
 hi Search ctermfg=yellow ctermbg=black cterm=bold
 
-filetype off
-" Also load indent files, to automatically do language-dependent indenting. "
+" Tambem carrega arquivos, para fazer automaticamente indentacao dependendo da
+" linguagem
 filetype plugin indent on
 
 " Implementando um autofechamento de chaves, parenthesis, etc... "
-" inoremap " ""<left> "
-" inoremap ' ''<left> "
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
