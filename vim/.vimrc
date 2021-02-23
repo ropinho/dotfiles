@@ -20,6 +20,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
 
 " Faça do vim sua IDE C++ 
 Plug 'chxuan/cpp-mode'
@@ -45,8 +46,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1
     \ && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
-" Habilita o F8 para abrir a TagBar
-nmap <F8> :TagbarToggle<CR>
+" Atalhos de teclado, para TagBar e NERDTreeToggle
+nmap <F8> :TagbarToggle<CR> 
+nmap <F9> :NERDTreeToggle<CR>
 
 set mouse=a     " ativa o uso do mouse no terminal se o emulador dele suportar
 set colorcolumn=81             " destaca a 81a coluna do editor
@@ -54,7 +56,9 @@ set showmode                   " mostra em que modo o editor esta' atualmente
 set number                     " mostra os numeros das linhas
 
 set autoindent                 " indenta automaticamente quando quebra a linha
-set shiftwidth=2               " numero de espacos para usar no autoindent
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+"set shiftwidth=4               " numero de espacos para usar no autoindent
+"set tabstop=4
 set backspace=indent,eol,start " permite deletar qualquer coisa no modo insert
 
 set nocompatible
@@ -69,6 +73,8 @@ hi Search ctermfg=yellow ctermbg=black cterm=bold
 filetype plugin indent on
 
 " Implementando um autofechamento de chaves, parenthesis, etc... "
+inoremap " ""<left>
+inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
