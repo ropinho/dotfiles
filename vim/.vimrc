@@ -19,8 +19,9 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'majutsushi/tagbar'
+" Desenvolvimento Web 
 Plug 'mattn/emmet-vim'
+Plug 'posva/vim-vue'
 
 " Faça do vim sua IDE C++ 
 Plug 'chxuan/cpp-mode'
@@ -56,9 +57,10 @@ set showmode                   " mostra em que modo o editor esta' atualmente
 set number                     " mostra os numeros das linhas
 
 set autoindent                 " indenta automaticamente quando quebra a linha
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-"set shiftwidth=4               " numero de espacos para usar no autoindent
-"set tabstop=4
+set shiftwidth=2               " numero de espacos para usar no autoindent
+set tabstop=2
+set smarttab
+set expandtab
 set backspace=indent,eol,start " permite deletar qualquer coisa no modo insert
 
 set nocompatible
