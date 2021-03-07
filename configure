@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# Aplica as configs movendo os arquivos de configuracao pros seus diretorios
+#
+
+# Unix colors codes
+blu=69
+yel=220
+
+printc() {
+  echo -ne "\e[38;5;$1m$2\e[0m"
+}
+
+runcmd() {
+  cmd=$1
+  printc $blu "$cmd"
+  sleep 0.2
+  $cmd >> configure.log
+  echo -e "\r$cmd"
+}
+
+configure() {
+  homedir=$HOME
+  echo "Home directory: $homedir"
+
+  # Arquivos do Zsh
+  runcmd "echo 'hello archer'"
+  # Arquivos do Bash
+  # Arquivos do Vim
+  # Arquivos do Terminator
+}
+
+configure

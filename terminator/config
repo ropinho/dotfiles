@@ -1,21 +1,22 @@
 [global_config]
+  window_state = maximise
   title_hide_sizetext = True
   title_transmit_fg_color = "#241f31"
-  title_transmit_bg_color = "#7076c9"
+  title_transmit_bg_color = "#ab1852"
   title_receive_fg_color = "#f6f5f4"
   title_receive_bg_color = "#24e97f"
   title_inactive_fg_color = "#f6f5f4"
   title_inactive_bg_color = "#1b2224"
   suppress_multiple_term_dialog = True
   title_use_system_font = False
-  title_font = Inconsolata Medium Semi-Condensed 10
+  title_font = Noto Mono 9
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.94
+    background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Fira Mono 9.5
+    font = Fira Code 10
     foreground_color = "#ffffff"
     scrollbar_position = hidden
     palette = "#000000:#e01b24:#26a259:#f5c211:#3584e4:#9141ac:#00aaaa:#aaaaaa:#555555:#fa5144:#57e389:#f9f06b:#99c1f1:#dc8add:#55ffff:#ffffff"
@@ -40,6 +41,15 @@
     show_titlebar = False
     scroll_on_output = True
     scrollback_lines = 1000
+    use_system_font = False
+  [[redbird]]
+    background_color = "#221212"
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Liberation Mono Bold 10.5
+    foreground_color = "#edcccc"
+    scrollbar_position = hidden
     use_system_font = False
 [layouts]
   [[default]]

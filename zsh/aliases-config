@@ -1,0 +1,15 @@
+# ls - list storage
+alias ls='ls --color=auto'
+alias l='ls -lhF'
+alias ll='l -a'
+alias la='ls -aF'
+alias lss='ls -Fsh1'
+
+# Package managers
+alias pacman='pacman --color auto'
+alias pacaur='pacaur --color=auto'
+
+# Grep
+alias grep='grep --color=auto'
+alias egrep='grep -e'
+
