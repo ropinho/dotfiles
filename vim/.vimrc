@@ -4,33 +4,29 @@ call plug#begin('~/.vim/plugged')
 
 " Verificar sintaxe
 Plug 'scrooloose/syntastic'
-
 " Plugin do Git
 Plug 'tpope/vim-fugitive'
-
 " Para parentesis, aspas, tags XML, e mais...
 Plug 'tpope/vim-surround'
-
 " Temas de cores
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-
+Plug 'morhetz/gruvbox'
 " Árvore de diretórios e arquivos
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-
 " Desenvolvimento Web 
 Plug 'mattn/emmet-vim'
 Plug 'posva/vim-vue'
-
 " Faça do vim sua IDE C++ 
 Plug 'chxuan/cpp-mode'
 Plug 'vim-jp/vim-cpp'
+" Rust "
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
 colorscheme spaceduck
-
 set termguicolors
 syntax enable
 filetype off

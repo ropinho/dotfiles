@@ -32,7 +32,7 @@ export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
 # Configuracao de Keybindings
-source keybindings-config
+source $HOME/.zsh/keybindings-config
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -137,7 +137,7 @@ function showunixcolors() {
 
 #------------------------------------------------------------------------------
 # Aliases
-source aliases-config
+source $HOME/.zsh/aliases-config
 #------------------------------------------------------------------------------
 
 # make flag
