@@ -1,10 +1,10 @@
 [global_config]
   window_state = maximise
   title_hide_sizetext = True
-  title_transmit_fg_color = "#241f31"
-  title_transmit_bg_color = "#ab1852"
-  title_receive_fg_color = "#f6f5f4"
-  title_receive_bg_color = "#24e97f"
+  title_transmit_fg_color = "#deddda"
+  title_transmit_bg_color = "#030303"
+  title_receive_fg_color = "#121212"
+  title_receive_bg_color = "#8ff0a4"
   title_inactive_fg_color = "#f6f5f4"
   title_inactive_bg_color = "#1b2224"
   suppress_multiple_term_dialog = True
@@ -13,10 +13,11 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 1.0
+    background_color = "#171717"
+    background_darkness = 0.92
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Fira Code 10
+    font = DejaVu Sans Mono 10
     foreground_color = "#ffffff"
     scrollbar_position = hidden
     palette = "#000000:#e01b24:#26a259:#f5c211:#3584e4:#9141ac:#00aaaa:#aaaaaa:#555555:#fa5144:#57e389:#f9f06b:#99c1f1:#dc8add:#55ffff:#ffffff"
@@ -31,16 +32,6 @@
     cursor_color = "#aaaaaa"
     font = TerminessTTF Nerd Font Mono Bold 12
     foreground_color = "#c0bfbc"
-    use_system_font = False
-  [[bigterm]]
-    background_darkness = 0.7
-    background_type = transparent
-    cursor_color = "#aaaaaa"
-    font = Hack 13
-    foreground_color = "#ffffff"
-    show_titlebar = False
-    scroll_on_output = True
-    scrollback_lines = 1000
     use_system_font = False
   [[redbird]]
     background_color = "#221212"
