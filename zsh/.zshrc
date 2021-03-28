@@ -26,13 +26,37 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 HISTFILE=~/.zhistory
 HISTSIZE=10000
 SAVEHIST=10000
+#export EDITOR=/usr/bin/nano
+#export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
 
-# Configuracao de Keybindings
-source $HOME/.zsh/keybindings-config
+## Keybindings section
+bindkey -e
+bindkey '^[[7~' beginning-of-line                               # Home key
+bindkey '^[[H' beginning-of-line                                # Home key
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
+fi
+bindkey '^[[8~' end-of-line                                     # End key
+bindkey '^[[F' end-of-line                                     # End key
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
+fi
+bindkey '^[[2~' overwrite-mode                                  # Insert key
+bindkey '^[[3~' delete-char                                     # Delete key
+bindkey '^[[C'  forward-char                                    # Right key
+bindkey '^[[D'  backward-char                                   # Left key
+bindkey '^[[5~' history-beginning-search-backward               # Page up key
+bindkey '^[[6~' history-beginning-search-forward                # Page down key
+
+# Navigate words with ctrl+arrow keys
+bindkey '^[Oc' forward-word                                     #
+bindkey '^[Od' backward-word                                    #
+bindkey '^[[1;5D' backward-word                                 #
+bindkey '^[[1;5C' forward-word                                  #
+bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
+bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -125,19 +149,19 @@ export VISUAL=vim
 
 export PATH=$PATH:$HOME/.local/bin
 export LD_LIBRARY_PATH=/usr/lib:/lib:/usr/lib64:/usr/lib32:/usr/local/lib:/usr/local/lib64:$HOME/.local/lib
-#------------------------------------------------------------------------------
-function showunixcolors() {
-  for COLOR in {1..255}
-  do
-    echo -en "\e[38;5;${COLOR}m${COLOR} "
-  done
-  echo
-}
-
-
-#------------------------------------------------------------------------------
 # Aliases
-source $HOME/.zsh/aliases-config
+# list storage
+alias ls='ls --color=auto'
+alias l='ls -lhF'
+alias ll='l -a'
+alias la='ls -aF'
+alias lss='ls -Fsh1'
+
+alias pacman='pacman --color auto'
+alias pacaur='pacaur --color=auto'
+
+alias grep='grep --color=auto'
+alias egrep='grep -e'
 #------------------------------------------------------------------------------
 
 # make flag
