@@ -26,6 +26,8 @@ font pango:DejaVu Sans Mono 8
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window 1pixel
 new_float normal
+
+# Hide borders
 hide_edge_borders smart
 
 # Start Polybar
@@ -53,7 +55,8 @@ exec --no-startup-id xrandr --output eDP1 --off
 exec --no-startup-id xrandr --output HDMI1 --auto --primary
 
 # Setting background / wallpaper
-exec --no-startup-id feh --bg-fill $HOME/.config/i3/backgrounds/astronaut.jpg
+#exec --no-startup-id feh --bg-fill $HOME/.config/i3/backgrounds/astronaut.jpg
+exec --no-startup-id nitrogen --set-scaled $HOME/.config/i3/backgrounds/astronaut.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
