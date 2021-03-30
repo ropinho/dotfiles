@@ -1,0 +1,14 @@
+#!/bin/sh
+
+function getkblayout() {
+  setxkbmap -print | grep xkb_symbols | awk -F'+' '{ print $2 }'
+}
+
+layout=$(getkblayout)
+
+if [[ $layout == "us" ]]; then
+  setxkbmap br
+else
+  setxkbmap us
+fi
+
