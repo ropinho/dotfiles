@@ -28,7 +28,7 @@ new_window 1pixel
 new_float normal
 
 # Hide borders
-hide_edge_borders smart
+#hide_edge_borders smart
 
 # Start Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --shapes
@@ -247,8 +247,7 @@ bindsym $mod+r mode "resize"
 # =======================
 #
 # Change Keyboard Layout
-bindsym $mod+Shift+k exec --no-startup-id if [[ $(getkblayout) -eq br ]]; then \
-    setxkbmap us; else setxkbmap br; fi
+bindsym $mod+Shift+k exec --no-startup-id swap-keyboard-layout
 
 # Screenshot using scrot
 # OBS: If your host is using english (en_US), change "Imagens" to "Images"
@@ -269,7 +268,7 @@ exec --no-startup-id betterlockscreen -l blur
 #
 # Theme colors definitions:
 # Class                   Border   Background  Text     Indic.   ChildBorder
-  client.focused          #30343F  #30343F     #FFFFFF  #30343F
+  client.focused          #CEAFD6  #30343F     #FFFFFF  #30343F
   client.focused_inactive #30343F  #30343F     #FFFFFF  #30343F
   client.unfocused        #30343F  #30343F     #FFFFFF  #30343F
   client.urgent           #30343F  #30343F     #FFFFFF  #30343F
