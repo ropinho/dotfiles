@@ -8,25 +8,39 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 " Para parentesis, aspas, tags XML, e mais...
 Plug 'tpope/vim-surround'
+
 " Temas de cores
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'morhetz/gruvbox'
+Plug 'embark-theme/vim', { 'as': 'embark' }
+Plug 'owozsh/amora'
+Plug 'ayu-theme/ayu-vim', { 'as': 'ayu' }
+Plug 'Badacadabra/vim-archery', { 'as': 'archery' }
+
 " Árvore de diretórios e arquivos
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+
 " Desenvolvimento Web 
 Plug 'mattn/emmet-vim'
 Plug 'posva/vim-vue'
+
 " Faça do vim sua IDE C++ 
 Plug 'chxuan/cpp-mode'
 Plug 'vim-jp/vim-cpp'
+
 " Rust "
 Plug 'rust-lang/rust.vim'
 
+" Go Lang "
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
-colorscheme spaceduck
+colorscheme ayu
+""set background=dark
+
 set termguicolors
 syntax enable
 filetype off
@@ -46,6 +60,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1
 " Atalhos de teclado, para TagBar e NERDTreeToggle
 nmap <F8> :TagbarToggle<CR> 
 nmap <F9> :NERDTreeToggle<CR>
+nmap <F10> :colorscheme gruvbox<CR>
 
 set mouse=a     " ativa o uso do mouse no terminal se o emulador dele suportar
 set colorcolumn=81             " destaca a 81a coluna do editor

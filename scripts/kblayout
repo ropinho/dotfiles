@@ -1,0 +1,3 @@
+#!/bin/sh
+
+setxkbmap -print | grep xkb_symbols | awk -F'+' '{ print $2 }'

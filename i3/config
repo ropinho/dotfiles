@@ -56,7 +56,8 @@ exec --no-startup-id xrandr --output HDMI1 --auto --primary
 
 # Setting background / wallpaper
 #exec --no-startup-id feh --bg-fill $HOME/.config/i3/backgrounds/astronaut.jpg
-exec --no-startup-id nitrogen --set-scaled $HOME/.config/i3/backgrounds/astronaut.jpg
+exec --no-startup-id nitrogen --set-zoom-fill $HOME/.config/i3/backgrounds/red_samurai.jpg
+exec --no-startup-id wal -i $HOME/.config/i3/backgrounds/red_samurai.jpg 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
